@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "AnimeData"
-version = "O.1"
+version = "0.1"
 authors = [
  {name="Arthur276", email="arthur.cott@free.fr"}
 ]
