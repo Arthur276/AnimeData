@@ -11,7 +11,7 @@ exclude = [
 
 [project]
 name = "AnimeData"
-version = "0.1"
+version = "0.1.1"
 authors = [
  {name="Arthur276", email="arthur.cott@free.fr"}
 ]
