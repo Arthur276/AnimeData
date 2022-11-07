@@ -4,7 +4,7 @@ import urllib.request
 ad_version = "ADV-0.1"
 print("Version du script python d'AnimeData : ", ad_version)
 
-animedata = {"url" : "https://raw.githubusercontent.com/Arthur276/AnimeData/main/",
+animedata = {"url" : "https://raw.githubusercontent.com/cassphir/AnimeData/main/",
             "nom_fichier_source" : "animedata_source.json",
             "nom_fichier_local" : "animedata_local.json",
             "dict_nom_anime" : "nom_anime",

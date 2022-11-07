@@ -13,7 +13,7 @@ exclude = [
 name = "AnimeData"
 version = "0.1.1"
 authors = [
- {name="Arthur276", email="arthur.cott@free.fr"}
+ {name="cassphir", email=""}
 ]
 description = "Bibliothèque open-source des données sur les animés, utilitaire intégré."
 readme = "README.md"
@@ -26,5 +26,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Github" = "https://github.com/Arthur276/AnimeData"
-"Bug" = "https://github.com/Arthur276/AnimeData/issues"
+"Github" = "https://github.com/cassphir/AnimeData"
+"Bug" = "https://github.com/cassphir/AnimeData/issues"

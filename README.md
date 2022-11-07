@@ -1,6 +1,6 @@
 # AnimeData
 
-AnimeData est un projet développé par Arthur276.
+AnimeData est un projet développé par cassphir.
 
 Ce programme propose une librairie de données sur des animés, avec les informations associés : date de sortie, durée, nom ; et cela pour chaque épisode.
 
