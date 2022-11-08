@@ -6,7 +6,7 @@ print("Version du script python d'AnimeData : ", ad_version)
 
 animedata = {"dev_branch" : "dev-0.1" ,
             "main_branch" : "main" ,
-            "file_path" : "/src/animedata/animedata_source.json"
+            "file_path" : "/src/animedata/animedata_source.json",
             "repository_url" : "https://raw.githubusercontent.com/cassphir/AnimeData/",
             "nom_fichier_source" : "animedata_source.json",
             "nom_fichier_local" : "animedata_local.json",
