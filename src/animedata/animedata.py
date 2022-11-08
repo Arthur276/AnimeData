@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-ad_version = "ADV-0.1"
+ad_version = "0.1.2"
 print("Version du script python d'AnimeData : ", ad_version)
 
 animedata = {"dev_branch" : "dev-0.1" ,
@@ -16,8 +16,8 @@ animedata = {"dev_branch" : "dev-0.1" ,
             "dict_date_sortie_episode" : "date_sortie_episode",
             "dict_nom_episode" : "nom_episode"}
 
-def maj_anime_liste(dev_mode = False):
-    """Télécharge le fichier source d'AnimeData contenant les données des animés"""
+def maj_anime_lib(dev_mode = False):
+    """Met à jour la librairie AnimeData depuis Github"""
     #STATUS : TEST
     if dev_mode:
         urllib.request.urlretrieve(animedata["repository_url"] + animedata["dev_branch"] + animedata["file_path"],animedata["nom_fichier_source"])
@@ -25,8 +25,7 @@ def maj_anime_liste(dev_mode = False):
         urllib.request.urlretrieve(animedata["repository_url"] + animedata["main_branch"] + animedata["file_path"],animedata["nom_fichier_source"])
     with open(animedata["nom_fichier_source"],"r",encoding = "utf-8") as animedata_json:
         main_dict = json.load(animedata_json)
-        print("Données d'AnimeData téléchargées !")
-        print("Version AnimeData du fichier téléchargé :" + main_dict["ANIMEDATA-METADATA"]["animedata_version"])
+        print("Version AnimeData du fichier téléchargé :" + main_dict["ANIMEDATA-METADATA"]["animedata_version"], main_dict["ANIMEDATA-METADATA"]["lib_subversion"])
         print("Voici les animés disponible en ligne :")
         for element in main_dict.values():
             if element["type"] == "anime":
