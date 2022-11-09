@@ -4,6 +4,7 @@ import urllib.request
 ad_version = "0.1.2"
 print("Version du script python d'AnimeData : ", ad_version)
 
+dev_mode = False
 animedata = {"dev_branch" : "dev-0.1" ,
             "main_branch" : "main" ,
             "file_path" : "/src/animedata/animedata_source.json",
@@ -16,16 +17,16 @@ animedata = {"dev_branch" : "dev-0.1" ,
             "dict_date_sortie_episode" : "date_sortie_episode",
             "dict_nom_episode" : "nom_episode"}
 
-def maj_anime_lib(dev_mode = False):
+def maj_anime_lib():
     """Met à jour la librairie AnimeData depuis Github"""
-    #STATUS : TEST
+    #STATUS : OK
     if dev_mode:
         urllib.request.urlretrieve(animedata["repository_url"] + animedata["dev_branch"] + animedata["file_path"],animedata["nom_fichier_source"])
     else:
         urllib.request.urlretrieve(animedata["repository_url"] + animedata["main_branch"] + animedata["file_path"],animedata["nom_fichier_source"])
     with open(animedata["nom_fichier_source"],"r",encoding = "utf-8") as animedata_json:
         main_dict = json.load(animedata_json)
-        print("Version AnimeData du fichier téléchargé :" + main_dict["ANIMEDATA-METADATA"]["animedata_version"], main_dict["ANIMEDATA-METADATA"]["lib_subversion"])
+        print("Version AnimeData du fichier téléchargé :" + main_dict["ANIMEDATA-METADATA"]["animedata_version"],"#" + main_dict["ANIMEDATA-METADATA"]["lib_subversion"])
         print("Voici les animés disponible en ligne :")
         for element in main_dict.values():
             if element["type"] == "anime":
@@ -33,7 +34,7 @@ def maj_anime_lib(dev_mode = False):
 
 def sauv_json(anime_dict):
     """Sauvegarde les données des animés contenues dans un dictionnaire dans un fichier JSON personalisé"""
-    #STATUS : BETA
+    #STATUS : OK
     with open(animedata["nom_fichier_local"],"w",encoding = "utf-8") as local_json:
         for anime in anime_dict.values():
             if anime["type"] == "anime":
@@ -49,7 +50,7 @@ def sauv_json(anime_dict):
 
 def get_json_dict(ad_source = False):
     """Récupère le dictionnaire contenant les données depuis le fichier local d'AnimeData ou un fichier personalisé"""
-    #STATUS : BETA
+    #STATUS : OK
     if ad_source :
         fichier_cible = animedata["nom_fichier_source"]
     else:
