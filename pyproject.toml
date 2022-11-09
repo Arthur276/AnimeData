@@ -10,8 +10,8 @@ exclude = [
   ]
 
 [project]
-name = "AnimeData"
-version = "0.1.2"
+name = "animedata"
+version = "0.1"
 authors = [
  {name="cassphir", email=""}
 ]
@@ -24,8 +24,8 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dependencies = ["json","urllib.request"]
+dependencies = ["tomli"]
 
 [project.urls]
-"Github" = "https://github.com/cassphir/AnimeData"
-"Bug" = "https://github.com/cassphir/AnimeData/issues"
+"Github" = "https://github.com/cassphir/animedata"
+"Bug" = "https://github.com/cassphir/animedata/issues"

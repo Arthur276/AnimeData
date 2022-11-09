@@ -1,14 +1,15 @@
 import json
 import urllib.request
+import tomli
 
-ad_version = "0.1.2"
+with open("../../pyproject.toml", mode="rb") as pypr:
+    ad_version = tomli.load(pypr)["project"]["version"]
 print("Version du script python d'AnimeData : ", ad_version)
-
 dev_mode = False
 animedata = {"dev_branch" : "dev-0.1" ,
             "main_branch" : "main" ,
             "file_path" : "/src/animedata/animedata_source.json",
-            "repository_url" : "https://raw.githubusercontent.com/cassphir/AnimeData/",
+            "repository_url" : "https://raw.githubusercontent.com/cassphir/animedata/",
             "nom_fichier_source" : "animedata_source.json",
             "nom_fichier_local" : "animedata_local.json",
             "dict_nom_anime" : "nom_anime",
@@ -16,6 +17,7 @@ animedata = {"dev_branch" : "dev-0.1" ,
             "dict_duree_episode" : "duree_episode",
             "dict_date_sortie_episode" : "date_sortie_episode",
             "dict_nom_episode" : "nom_episode"}
+
 
 def maj_anime_lib():
     """Met à jour la librairie AnimeData depuis Github"""
@@ -32,6 +34,7 @@ def maj_anime_lib():
             if element["type"] == "anime":
                 print(element[animedata["dict_nom_anime"]])
 
+
 def sauv_json(anime_dict):
     """Sauvegarde les données des animés contenues dans un dictionnaire dans un fichier JSON personalisé"""
     #STATUS : OK
@@ -47,6 +50,7 @@ def sauv_json(anime_dict):
         else:
             print("Dictionnaire transmis non conforme à la sauvegarde")
         json.dump(obj = json_dict, fp = local_json,ensure_ascii = False)
+
 
 def get_json_dict(ad_source = False):
     """Récupère le dictionnaire contenant les données depuis le fichier local d'AnimeData ou un fichier personalisé"""
