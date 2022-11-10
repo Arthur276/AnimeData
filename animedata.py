@@ -2,7 +2,7 @@ import json
 import urllib.request
 import tomli
 
-with open("../../pyproject.toml", mode="rb") as pypr:
+with open("./pyproject.toml", mode="rb") as pypr:
     ad_version = tomli.load(pypr)["project"]["version"]
 print("Version du script python d'AnimeData : ", ad_version)
 dev_mode = False
