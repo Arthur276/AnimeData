@@ -1,12 +1,12 @@
 # AnimeData
 
-AnimeData est un projet développé par cassphir.
+AnimeData est un projet développé par swarthur.
 
 Ce programme propose une librairie de données sur des animés, avec les informations associés : date de sortie, durée, nom ; et cela pour chaque épisode.
 
 Afin que cette librairie soit d'utilité générale, et pas seulement pour le projet AnimeTime, qui a poussé ce projet à naitre; un utlitaire est fourni, mettant a disposition les outils pour modifier, exploiter ou agrandir cette librairie de données, à la manière d'encyclopédie libre en ligne telles que Wikipédia.
 
-Pour suggérer des modifications, cela se passe sur Github : https://github.com/cassphir/AnimeData/
+Pour suggérer des modifications, cela se passe sur Github : https://github.com/swarthur/AnimeData/
 
 Aussi, grâce à Github, l'utilitaire AnimeData permet de mettre à jour la librairie sans avoir a télécharger le projet dans son entièrté à nouveau.
 

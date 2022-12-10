@@ -13,7 +13,7 @@ exclude = [
 name = "animedata"
 version = "0.1.4"
 authors = [
- {name="cassphir", email=""}
+ {name="swarthur", email=""}
 ]
 description = "Bibliothèque open-source des données sur les animés, utilitaire intégré."
 readme = "README.md"
@@ -27,5 +27,5 @@ classifiers = [
 dependencies = ["tomli"]
 
 [project.urls]
-"Github" = "https://github.com/cassphir/animedata"
-"Bug" = "https://github.com/cassphir/animedata/issues"
+"Github" = "https://github.com/swarthur/animedata"
+"Bug" = "https://github.com/swarthur/animedata/issues"
