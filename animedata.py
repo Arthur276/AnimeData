@@ -21,7 +21,7 @@ ad_table = {
 
 
 def update_anime_lib():
-    """Met à jour la librairie AnimeData depuis Github"""
+    """Downloads and replaces animedata_source.json file from Github"""
     # STATUS : OK
     if dev_mode:
         urllib.request.urlretrieve(
@@ -47,8 +47,10 @@ def update_anime_lib():
                 print(element[ad_table["key_anime_name"]])
 
 
-def sauv_json(anime_dict):
-    """Sauvegarde les données des animés contenues dans un dictionnaire dans un fichier JSON personalisé"""
+def save_json(anime_dict):
+    """Saves a formatted dictionnary into a json file
+    :param animedict: The formatted (with format_dict) dict to save
+    """
     # STATUS : OK
     with open(ad_table["local_file_name"], "w", encoding="utf-8") as local_json:
         for anime in anime_dict.values():
@@ -62,7 +64,7 @@ def sauv_json(anime_dict):
         json.dump(obj=json_dict, fp=local_json, ensure_ascii=False)
 
 
-def get_json_dict(ad_source=False):
+def load_json_dict(ad_source=False):
     """Récupère le dictionnaire contenant les données depuis le fichier local d'AnimeData ou un fichier personalisé"""
     # STATUS : OK
     if ad_source:
