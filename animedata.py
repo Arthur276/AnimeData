@@ -10,7 +10,7 @@ ad_table = {
     "dev_branch": "dev-0.1/",
     "main_branch": "main/",
     "repository_url":
-    "https://raw.githubusercontent.com/cassphir/ad_table/",
+    "https://raw.githubusercontent.com/swarthur/ad_table/",
     "source_file_name": "animedata_source.json",
     "local_file_name": "animedata_local.json",
     "key_anime_name": "nom_anime",
