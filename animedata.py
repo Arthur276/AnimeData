@@ -1,3 +1,5 @@
+"""Module to manage animedata library."""
+
 import json
 import urllib.request
 import tomli
@@ -21,7 +23,7 @@ ad_table = {
 
 
 def update_anime_lib():
-    """Downloads and replaces animedata_source.json file from Github"""
+    """Download and replaces animedata_source.json file from Github."""
     # STATUS : OK
     if dev_mode:
         urllib.request.urlretrieve(
@@ -47,20 +49,24 @@ def update_anime_lib():
                 print(element[ad_table["key_anime_name"]])
 
 
-def save_json(anime_dict : dict):
-    """Saves into a json file a dictionnary
+def save_json(anime_dict: dict):
+    """Save a dictionnary into a json file.
 
     Args:
-        anime_dict (dict): Dictionnary containing anime's data. Must be formatted with format_dict. 
+        anime_dict (dict): Dictionnary containing anime's data.
+            Must be formatted with multi_anime_dict.
 
     Raises:
         SyntaxError: Error when the dictionnary is not correctly formatted
     """
     # STATUS : OK
-    with open(ad_table["local_file_name"], "w", encoding="utf-8") as local_json:
+    with open(ad_table["local_file_name"],
+              "w",
+              encoding="utf-8") as local_json:
         for anime in anime_dict.values():
             if anime["type"] != "anime":
-                raise SyntaxError("The dictionnary is not correctly formated. Use format_dict()")
+                raise SyntaxError("The dictionnary is not correctly \
+                                  formated. Use format_dict()")
         json_dict = {
             "ANIMEDATA-METADATA": {
                 "type": "metadata",
@@ -69,12 +75,13 @@ def save_json(anime_dict : dict):
         json.dump(obj=json_dict, fp=local_json, ensure_ascii=False)
 
 
-def load_json_dict(ad_source:bool=False)-> dict:
-    """Loads data from a json file containing animes' data and return a dictionnary containing them.
+def load_json_dict(ad_source: bool = False) -> dict:
+    """Load data from a json file containing animes' data.
 
     Args:
-        ad_source (bool, optional): Define if the data's source file is animedata's source file, 
-        otherwise it is a custom file. Defaults to False.
+        ad_source (bool, optional): Define if the data's
+            source file is animedata's source file,
+            otherwise it is a custom file. Defaults to False.
 
     Returns:
         dict: dictionnary containing anime's data.
