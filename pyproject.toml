@@ -15,7 +15,7 @@ version = "0.1.4"
 authors = [
  {name="swarthur", email=""}
 ]
-description = "Bibliothèque open-source des données sur les animés, utilitaire intégré."
+description = "Open-source library containing database about animes/series and including a built-in utility."
 readme = "README.md"
 requires-python = ">=3.7"
 license = "MIT"
