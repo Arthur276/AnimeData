@@ -4,9 +4,9 @@ import json
 import urllib.request
 import tomli
 import warnings
-import os
+import os.path
 
-script_path = os.path.dirname(__file__)
+dir_path = os.path.dirname(__file__)
 dev_mode = False
 ad_table = {
     "dev_branch": "dev-0.1/",
@@ -21,7 +21,7 @@ ad_table = {
     "key_episode_release_date": "episode_release_date",
     "key_episode_name": "episode_name"}
 
-with open(os.path.join(script_path,"./pyproject.toml"), mode="rb") as pypr:
+with open(os.path.join(dir_path,"./pyproject.toml"), mode="rb") as pypr:
     ad_version = tomli.load(pypr)["project"]["version"]
 print("AnimeData script version : ", ad_version)
 
@@ -41,7 +41,7 @@ def update_anime_lib():
             ad_table["main_branch"] +
             ad_table["source_file_name"],
             ad_table["source_file_name"])
-    with open(os.path.join(script_path,ad_table["source_file_name"]), encoding="utf-8") as ad_json:
+    with open(os.path.join(dir_path,ad_table["source_file_name"]), encoding="utf-8") as ad_json:
         main_dict = json.load(ad_json)
         print("AnimeData library version :" +
               main_dict["ANIMEDATA-METADATA"]["animedata_version"],
@@ -64,7 +64,7 @@ def save_json(anime_dict: dict):
         SyntaxError: Error when the dictionnary is not correctly formatted
     """
     # STATUS : OK
-    with open(os.path.join(script_path,ad_table['local_file_name']),
+    with open(os.path.join(dir_path,ad_table['local_file_name']),
               "w",
               encoding="utf-8") as local_json:
         for anime in anime_dict.values():
@@ -95,6 +95,6 @@ def load_json_dict(ad_source: bool = False) -> dict:
         target_file = ad_table["source_file_name"]
     else:
         target_file = ad_table["local_file_name"]
-    with open(os.path.join(script_path,target_file), "r", encoding="utf-8") as ad_json:
+    with open(os.path.join(dir_path,target_file), "r", encoding="utf-8") as ad_json:
         anime_dict = json.load(ad_json)
     return anime_dict
