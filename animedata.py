@@ -3,23 +3,27 @@
 import json
 import urllib.request
 import tomli
+import warnings
+import os
 
-with open("../animedata/pyproject.toml", mode="rb") as pypr:
-    ad_version = tomli.load(pypr)["project"]["version"]
-print("AnimeData script version : ", ad_version)
+script_path = os.path.dirname(__file__)
 dev_mode = False
 ad_table = {
     "dev_branch": "dev-0.1/",
     "main_branch": "main/",
     "repository_url":
-    "https://raw.githubusercontent.com/swarthur/ad_table/",
-    "source_file_name": "animedata_source.json",
-    "local_file_name": "animedata_local.json",
-    "key_anime_name": "nom_anime",
-    "key_seasons_episodes": "saisons_episodes",
-    "key_episode_duration": "duree_episode",
-    "key_episode_release_date": "date_sortie_episode",
-    "key_episode_name": "nom_episode"}
+    "https://raw.githubusercontent.com/swarthur/animedata/",
+    "source_file_name": "./animedata_source.json",
+    "local_file_name": "./animedata_local.json",
+    "key_anime_name": "anime_name",
+    "key_seasons_episodes": "seasons_episodes",
+    "key_episode_duration": "episode_duration",
+    "key_episode_release_date": "episode_release_date",
+    "key_episode_name": "episode_name"}
+
+with open(os.path.join(script_path,"./pyproject.toml"), mode="rb") as pypr:
+    ad_version = tomli.load(pypr)["project"]["version"]
+print("AnimeData script version : ", ad_version)
 
 
 def update_anime_lib():
@@ -37,7 +41,7 @@ def update_anime_lib():
             ad_table["main_branch"] +
             ad_table["source_file_name"],
             ad_table["source_file_name"])
-    with open(ad_table["source_file_name"], encoding="utf-8") as ad_json:
+    with open(os.path.join(script_path,ad_table["source_file_name"]), encoding="utf-8") as ad_json:
         main_dict = json.load(ad_json)
         print("AnimeData library version :" +
               main_dict["ANIMEDATA-METADATA"]["animedata_version"],
@@ -60,7 +64,7 @@ def save_json(anime_dict: dict):
         SyntaxError: Error when the dictionnary is not correctly formatted
     """
     # STATUS : OK
-    with open(ad_table["local_file_name"],
+    with open(os.path.join(script_path,ad_table['local_file_name']),
               "w",
               encoding="utf-8") as local_json:
         for anime in anime_dict.values():
@@ -91,6 +95,6 @@ def load_json_dict(ad_source: bool = False) -> dict:
         target_file = ad_table["source_file_name"]
     else:
         target_file = ad_table["local_file_name"]
-    with open(target_file, "r", encoding="utf-8") as ad_json:
+    with open(os.path.join(script_path,target_file), "r", encoding="utf-8") as ad_json:
         anime_dict = json.load(ad_json)
     return anime_dict
