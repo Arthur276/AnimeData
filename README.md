@@ -13,21 +13,46 @@ AnimeData is composed of 2 main files :
 
 ## Data available
 
-In theory, the database can support any kind of information about an anime or a serie, but currently only a few of data types are added :
+In theory, the database can support any kind of information about an anime or a serie but every type may not be available to every anime.
 
-1. Anime :
-    - name (only one)
-2. Season :
-    - release date
-    - number of episodes
-3. Episode :
-    - name (only one)
-    - release date
-    - duration
-    - number
+## How to use this library
+
+In order to make this project useful for everyone, anybody can use the provided tool to get, add or modify its animes or series, **from a compatible manager**.
+> Currently, only AnimeTime is compatible with AnimeData.
+
+### How does the tool works ?
+
+The tool's input needs to be an dictionnary, specially formatted, with special keys provided in a dictionnary in the module.
+
+Example of formatted python dictionnary :
+
+```py
+json_dict = {"anime_name":{
+    "seasons_episodes":{
+        "episode_number":{
+            "episode_name" : "episode_name",
+            "episode_duration" : 00,
+            "episode_release_date" : [MM,DD,YYYY]
+            }
+        ...} # Others episodes
+        }
+    ...} # Others animes 
+```
+
+### Does another JSON file is compatible ?
+
+AnimeData uses metadata, and corruped metadata stops the tool from loading the data.
+
+The AnimeData loading-friendly files are :
+
+* animedata_source.json : source file of the database
+* animedata_local.json : custom file, similar to the source file but containing custom data from an anime manager.
+
+The AnimeData saving-friendly files is:
+
+* animedata_local.json : custom file used to save anime's custom data from a compatible anime manager.
 
 
-Afin que cette librairie soit d'utilité générale, et pas seulement pour le projet AnimeTime, qui a poussé ce projet à naitre; un utlitaire est fourni, mettant a disposition les outils pour modifier, exploiter ou agrandir cette librairie de données, à la manière d'encyclopédie libre en ligne telles que Wikipédia.
 
 Pour suggérer des modifications, cela se passe sur Github : <https://github.com/swarthur/AnimeData/>
 
