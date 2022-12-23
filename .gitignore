@@ -2,3 +2,4 @@
 *.gz
 *.whl
 *.pyc
+animedata_local.json
