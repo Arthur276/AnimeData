@@ -98,3 +98,23 @@ def load_json_dict(ad_source: bool = False) -> dict:
     with open(os.path.join(dir_path,target_file), "r", encoding="utf-8") as ad_json:
         anime_dict = json.load(ad_json)
     return anime_dict
+
+def check_dict(anime_dict:dict,correct = False) -> bool:
+    corrupted_keys = []
+    dict_valid = True
+    for element in anime_dict.keys():
+        dict_element = anime_dict[element]
+        try:
+            if dict_element["type"] == "anime":
+                if dict_element.get(ad_table["key_anime_name"]) != element:
+                    corrupted_keys.append(element)
+                    dict_valid = False
+            elif dict_element.get("type") == "metadata":
+                if element != "ANIMEDATA-METADATA":
+                    corrupted_keys.append(element)
+                    dict_valid = False
+        except KeyError:
+            corrupted_keys.append(element)
+            if correct:
+                del anime_dict[element]
+    return dict_valid, anime_dict, corrupted_keys
