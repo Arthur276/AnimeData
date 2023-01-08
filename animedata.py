@@ -5,6 +5,7 @@ import urllib.request
 import tomli
 import warnings
 import os.path
+from copy import deepcopy
 
 dir_path = os.path.dirname(__file__)
 dev_mode = False
@@ -108,7 +109,7 @@ def check_dict(anime_dict:dict) -> tuple:
     """
     corrupted_keys = []
     dict_valid = True
-    correct_dict = anime_dict.copy()
+    correct_dict = deepcopy(anime_dict)
     for element in anime_dict.keys():
         dict_element = anime_dict[element]
         try:
