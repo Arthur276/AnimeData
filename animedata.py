@@ -20,29 +20,38 @@ ad_table = {
     "key_episode_release_date": "episode_release_date",
     "key_episode_name": "episode_name"}
 
-with open(os.path.join(dir_path,"./pyproject.toml"), mode="rb") as pypr:
+with open(os.path.join(dir_path, "./pyproject.toml"), mode="rb") as pypr:
     ad_version = tomli.load(pypr)["project"]["version"]
 print("AnimeData script version : ", ad_version)
+
+
+def get_ad_lib():
+    urllib.request.urlretrieve(
+        ad_table["repository_url"] +
+        github_branch +
+        ad_table["source_file_name"][2:],
+        os.path.join(dir_path, ad_table["source_file_name"]))
+
+def get_ad_lib_content() -> dict:
+    with open(os.path.join(dir_path, 
+        ad_table["source_file_name"]), 
+        encoding="utf-8") as ad_json:
+            ad_dict = json.load(ad_json)
+            return ad_dict
 
 
 def update_anime_lib():
     """Download and replaces animedata_source.json file from Github."""
     # STATUS : OK
-    urllib.request.urlretrieve(
-        ad_table["repository_url"] +
-        github_branch +
-        ad_table["source_file_name"][2:],
-        os.path.join(dir_path,ad_table["source_file_name"]))
-    with open(os.path.join(dir_path,ad_table["source_file_name"]), encoding="utf-8") as ad_json:
-        main_dict = json.load(ad_json)
-        print("AnimeData library version :" +
-              main_dict["ANIMEDATA-METADATA"]["animedata_version"],
-              "#" +
-              main_dict["ANIMEDATA-METADATA"]["lib_subversion"])
-        print("Animes downloaded from Github :")
-        for element in main_dict.values():
-            if element["type"] == "anime":
-                print(element[ad_table["key_anime_name"]])
+    get_ad_lib()
+    ad_dict = get_ad_lib_content()
+    print("AnimeData library version :",
+        ad_dict["ANIMEDATA-METADATA"]["animedata_version"],
+        "#" + ad_dict["ANIMEDATA-METADATA"]["lib_subversion"])
+    print("Animes available :")
+    for element in ad_dict.values():
+        if element["type"] == "anime":
+            print(element[ad_table["key_anime_name"]])
 
 
 def save_json(anime_dict: dict):
