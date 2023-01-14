@@ -8,12 +8,10 @@ import os.path
 from copy import deepcopy
 
 dir_path = os.path.dirname(__file__)
-dev_mode = False
+github_branch = "main/"
 ad_table = {
-    "dev_branch": "dev-0.1/",
-    "main_branch": "main/",
     "repository_url":
-    "https://raw.githubusercontent.com/swarthur/animedata/",
+    f"https://raw.githubusercontent.com/swarthur/animedata/",
     "source_file_name": "./animedata_source.json",
     "local_file_name": "./animedata_local.json",
     "key_anime_name": "anime_name",
@@ -30,14 +28,10 @@ print("AnimeData script version : ", ad_version)
 def update_anime_lib():
     """Download and replaces animedata_source.json file from Github."""
     # STATUS : OK
-    if dev_mode :
-        target_branch = ad_table["dev_branch"]
-    else:
-        target_branch = ad_table["main_branch"] 
     urllib.request.urlretrieve(
         ad_table["repository_url"] +
-        target_branch +
-        ad_table["source_file_name"],
+        github_branch +
+        ad_table["source_file_name"][2:],
         os.path.join(dir_path,ad_table["source_file_name"]))
     with open(os.path.join(dir_path,ad_table["source_file_name"]), encoding="utf-8") as ad_json:
         main_dict = json.load(ad_json)
