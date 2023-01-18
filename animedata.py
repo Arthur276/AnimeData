@@ -26,28 +26,34 @@ print("AnimeData script version : ", ad_version)
 
 
 def get_ad_lib():
+    """Download and replace local animedata library from Github."""
     urllib.request.urlretrieve(
         ad_table["repository_url"] +
         github_branch +
         ad_table["source_file_name"][2:],
         os.path.join(dir_path, ad_table["source_file_name"]))
 
+
 def get_ad_lib_content() -> dict:
-    with open(os.path.join(dir_path, 
-        ad_table["source_file_name"]), 
-        encoding="utf-8") as ad_json:
-            ad_dict = json.load(ad_json)
-            return ad_dict
+    """Extract library data into a dictionnary.
+
+    Returns:
+        dict: dictionnary containg library data
+    """
+    with open(os.path.join(dir_path,
+              ad_table["source_file_name"]),
+              encoding="utf-8") as ad_json:
+        ad_dict = json.load(ad_json)
+        return ad_dict
 
 
-def update_anime_lib():
-    """Download and replaces animedata_source.json file from Github."""
+def show_lib_content():
+    """Show the version of the library and the animes available."""
     # STATUS : OK
-    get_ad_lib()
     ad_dict = get_ad_lib_content()
     print("AnimeData library version :",
-        ad_dict["ANIMEDATA-METADATA"]["animedata_version"],
-        "#" + ad_dict["ANIMEDATA-METADATA"]["lib_subversion"])
+          ad_dict["ANIMEDATA-METADATA"]["animedata_version"],
+          "#" + ad_dict["ANIMEDATA-METADATA"]["lib_subversion"])
     print("Animes available :")
     for element in ad_dict.values():
         if element["type"] == "anime":
@@ -62,7 +68,7 @@ def save_json(anime_dict: dict):
             Must be formatted with multi_anime_dict.
     """
     # STATUS : OK
-    with open(os.path.join(dir_path,ad_table['local_file_name']),
+    with open(os.path.join(dir_path, ad_table['local_file_name']),
               "w",
               encoding="utf-8") as local_json:
         if not check_dict(anime_dict)[0]:
@@ -75,7 +81,7 @@ corrupted key, ignoring it. Corrupted keys : {check_dict(anime_dict)[2]}")
                 "animedata_version": ad_version},
             **correct_dict
             }
-        json.dump(obj=json_dict, fp=local_json, ensure_ascii=False, indent= 4)
+        json.dump(obj=json_dict, fp=local_json, ensure_ascii=False, indent=4)
 
 
 def load_json(ad_source: bool = False) -> dict:
@@ -94,11 +100,14 @@ def load_json(ad_source: bool = False) -> dict:
         target_file = ad_table["source_file_name"]
     else:
         target_file = ad_table["local_file_name"]
-    with open(os.path.join(dir_path,target_file), "r", encoding="utf-8") as ad_json:
+    with open(os.path.join(dir_path, target_file),
+              "r",
+              encoding="utf-8") as ad_json:
         anime_dict = json.load(ad_json)
     return anime_dict
 
-def check_dict(anime_dict:dict) -> tuple:
+
+def check_dict(anime_dict: dict) -> tuple:
     """Check if the dictionnary is compatible with animedata's environment.
 
     Args:
