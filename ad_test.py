@@ -1,8 +1,8 @@
 import animedata as ad
 
 if __name__ == "__main__":
-    ad.dev_mode = True
-    ad.update_anime_lib()
+    ad.github_branch  = "dev-0.1/"
+    ad.get_ad_lib()
     test_json = ad.load_json(True)
     del test_json["ANIMEDATA-METADATA"]
     print(ad.check_dict(test_json))
