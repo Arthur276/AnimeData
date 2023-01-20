@@ -1,14 +1,14 @@
 """Module to manage animedata library."""
 
 import json
-import urllib.request
+import urllib.request, urllib.error
 import tomli
 import warnings
 import os.path
 from copy import deepcopy
 
 dir_path = os.path.dirname(__file__)
-github_branch = "main/"
+github_branch = "main"
 ad_table = {
     "repository_url":
     f"https://raw.githubusercontent.com/swarthur/animedata/",
@@ -25,14 +25,23 @@ with open(os.path.join(dir_path, "./pyproject.toml"), mode="rb") as pypr:
 print("AnimeData script version : ", ad_version)
 
 
-def get_ad_lib():
+def get_ad_lib(branch = github_branch):
     """Download and replace local animedata library from Github."""
-    urllib.request.urlretrieve(
-        ad_table["repository_url"] +
-        github_branch +
-        ad_table["source_file_name"][2:],
-        os.path.join(dir_path, ad_table["source_file_name"]))
-
+    try:
+        urllib.request.urlretrieve(
+            ad_table["repository_url"] +
+            github_branch + "/" +
+            ad_table["source_file_name"][2:],
+            os.path.join(dir_path, ad_table["source_file_name"]))
+    except urllib.error.HTTPError:
+        if branch != "main":
+            warnings.warn("Invalid Github URL : Fallback on main branch,\
+database may not be as expected",ResourceWarning)
+            get_ad_lib("main")
+        else:
+            raise RuntimeError("Unable to get library from Github")
+    else:
+        raise
 
 def get_ad_lib_content() -> dict:
     """Extract library data into a dictionnary.
