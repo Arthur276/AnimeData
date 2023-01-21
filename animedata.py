@@ -30,7 +30,7 @@ def get_ad_lib(branch = github_branch):
     try:
         urllib.request.urlretrieve(
             ad_table["repository_url"] +
-            github_branch + "/" +
+            branch + "/" +
             ad_table["source_file_name"][2:],
             os.path.join(dir_path, ad_table["source_file_name"]))
     except urllib.error.HTTPError:
@@ -40,7 +40,7 @@ database may not be as expected",ResourceWarning)
             get_ad_lib("main")
         else:
             raise RuntimeError("Unable to get library from Github")
-    else:
+    except:
         raise
 
 def get_ad_lib_content() -> dict:
