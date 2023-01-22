@@ -3,7 +3,7 @@
 import json
 import urllib.request
 import urllib.error
-import tomli
+import tomllib
 import warnings
 import os.path
 from copy import deepcopy
@@ -22,7 +22,7 @@ ad_table = {
     "key_episode_name": "episode_name"}
 
 with open(os.path.join(dir_path, "./pyproject.toml"), mode="rb") as pypr:
-    ad_version = tomli.load(pypr)["project"]["version"]
+    ad_version = tomllib.load(pypr)["project"]["version"]
 print("AnimeData script version : ", ad_version)
 
 
@@ -48,14 +48,23 @@ database may not be as expected", ResourceWarning)
             raise RuntimeError("Unable to get library from Github")
 
 
-def get_ad_lib_content() -> dict:
+def get_ad_lib_content(ad_source : bool = False) -> dict:
     """Extract library data into a dictionnary.
+
+    Args:
+        ad_source (bool, optional): Define if the data's
+            source file is animedata's source file,
+            otherwise it is a custom file. Defaults to False.
 
     Returns:
         dict: dictionnary containg library data
     """
+    if ad_source:
+        target_file = ad_table["source_file_name"]
+    else:
+        target_file = ad_table["local_file_name"]
     with open(os.path.join(dir_path,
-              ad_table["source_file_name"]),
+              target_file),
               encoding="utf-8") as ad_json:
         ad_dict = json.load(ad_json)
         return ad_dict
@@ -96,30 +105,7 @@ corrupted key, ignoring it. Corrupted keys : {check_dict(anime_dict)[2]}")
             **correct_dict
             }
         json.dump(obj=json_dict, fp=local_json, ensure_ascii=False, indent=4)
-
-
-def load_json(ad_source: bool = False) -> dict:
-    """Load data from a json file containing animes' data.
-
-    Args:
-        ad_source (bool, optional): Define if the data's
-            source file is animedata's source file,
-            otherwise it is a custom file. Defaults to False.
-
-    Returns:
-        dict: dictionnary containing anime's data.
-    """
-    # STATUS : OK
-    if ad_source:
-        target_file = ad_table["source_file_name"]
-    else:
-        target_file = ad_table["local_file_name"]
-    with open(os.path.join(dir_path, target_file),
-              "r",
-              encoding="utf-8") as ad_json:
-        anime_dict = json.load(ad_json)
-    return anime_dict
-
+        
 
 def check_dict(anime_dict: dict) -> tuple:
     """Check if the dictionnary is compatible with animedata's environment.
