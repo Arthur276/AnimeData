@@ -1,8 +1,7 @@
 import animedata as ad
 
 if __name__ == "__main__":
-    ad.github_branch  = "dev-0.1/"
-    ad.get_ad_lib()
+    ad.get_ad_lib("feat/check-dict")
     test_json = ad.get_ad_lib_content(True)
     del test_json["ANIMEDATA-METADATA"]
     print(ad.check_dict(test_json))
@@ -11,4 +10,3 @@ if __name__ == "__main__":
     del test_json_2["ANIMEDATA-METADATA"]
     print(ad.check_dict(test_json_2))
     print(test_json_2 == test_json)
-    

@@ -9,7 +9,6 @@ import os.path
 from copy import deepcopy
 
 dir_path = os.path.dirname(__file__)
-github_branch = "main"
 ad_table = {
     "repository_url":
     f"https://raw.githubusercontent.com/swarthur/animedata/",
@@ -26,12 +25,12 @@ with open(os.path.join(dir_path, "./pyproject.toml"), mode="rb") as pypr:
 print("AnimeData script version : ", ad_version)
 
 
-def get_ad_lib(branch: str = github_branch):
+def get_ad_lib(branch: str = "main"):
     """Download and replace local animedata library from Github.
 
     Args:
         branch (str, optional): select the target branch.
-            Defaults to github_branch.
+            Defaults to "main".
     """
     try:
         urllib.request.urlretrieve(
@@ -43,12 +42,12 @@ def get_ad_lib(branch: str = github_branch):
         if branch != "main":
             warnings.warn("Invalid Github URL : Fallback on main branch,\
 database may not be as expected", ResourceWarning)
-            get_ad_lib("main")
+            get_ad_lib()
         else:
             raise RuntimeError("Unable to get library from Github")
 
 
-def get_ad_lib_content(ad_source : bool = False) -> dict:
+def get_ad_lib_content(ad_source: bool = False) -> dict:
     """Extract library data into a dictionnary.
 
     Args:
@@ -105,7 +104,7 @@ corrupted key, ignoring it. Corrupted keys : {check_dict(anime_dict)[2]}")
             **correct_dict
             }
         json.dump(obj=json_dict, fp=local_json, ensure_ascii=False, indent=4)
-        
+
 
 def check_dict(anime_dict: dict) -> tuple:
     """Check if the dictionnary is compatible with animedata's environment.
