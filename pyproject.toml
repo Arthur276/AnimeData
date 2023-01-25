@@ -11,13 +11,13 @@ exclude = [
 
 [project]
 name = "watchdata"
-version = "0.1.4"
+version = "0.1"
 authors = [
  {name="swarthur"}
 ]
 description = "Open-source library containing database about series/animes and including a built-in utility."
 readme = "README.md"
-requires-python = ">=3.11.1"
+requires-python = ">=3.11"
 license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",

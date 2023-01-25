@@ -36,7 +36,7 @@ json_dict = {"series_name":{
             }
         ...} # Others episodes
         }
-    ...} # Others animes 
+    ...} # Others series 
 ```
 
 ### Does another JSON file is compatible ?
