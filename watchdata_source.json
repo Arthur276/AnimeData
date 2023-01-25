@@ -1,0 +1,450 @@
+{
+    "WATCHDATA-METADATA": {
+        "type": "metadata",
+        "watchdata": "0.1.4",
+        "lib_subversion" : "0"
+    },
+    "SNK": {
+        "type": "series",
+        "series_name": "SNK",
+        "seasons_episodes": {
+            "1": {
+                "1": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "À toi qui vis 2000 ans plus tard ~La chute de Shiganshina~"
+                },
+                "2": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Ce jour-là ~La chute de Shiganshina~"
+                },
+                "3": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Une faible étincelle dans le désespoir ~Le réveil de l'humanité~"
+                },
+                "4": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le soir de la cérémonie de fin d'entraînement ~Le réveil de l'humanité~"
+                },
+                "5": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Première bataille ~La lutte pour le district Trost~"
+                },
+                "6": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Une petite lame ~La lutte pour le district de Trost~"
+                },
+                "7": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Courte lame ~La lutte pour le district Trost~"
+                },
+                "8": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "J'entend les battements de ton cœur ~La lutte pour le district de Trost~"
+                },
+                "9": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Qu'est-il advenu du bras gauche ? ~La lutte pour le district de Trost~"
+                },
+                "10": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Répondre ~La lutte pour le district de Trost~"
+                },
+                "11": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Idole ~La lutte pour le district de Trost~"
+                },
+                "12": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Blessure ~La lutte pour le district de Trost~"
+                },
+                "13": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Désir primitif ~La lutte pour le district de Trost~"
+                },
+                "14": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "On ne peut pas le regarder dans les yeux ~La veille de la contre-attaque~"
+                },
+                "15": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Unité d'intervention ~La veille de la contre-attaque~"
+                },
+                "16": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Ce qu'il faut faire maintenant ~La veille de la contre-attaque~"
+                },
+                "17": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le Titan féminin ~La 57e expédition extra-muros~"
+                },
+                "18": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "La forêt des arbres géants ~La 57e expédition extra-muros~"
+                },
+                "19": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Morsure ~La 57e expédition extra-muros~"
+                },
+                "20": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Erwin Smith ~La 57e expédition extra-muros~"
+                },
+                "21": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Coup dur ~La 57e expédition extra-muros~"
+                },
+                "22": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Les vaincus ~La 57e expédition extra-muros~"
+                },
+                "23": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Sourire ~Attaque surprise au district de Stohess~"
+                },
+                "24": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Pitié ~Attaque surprise au district de Stohess~"
+                },
+                "25": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Mur ~Attaque surprise au district de Stohess~"
+                },
+                "26": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le Titan Bestial"
+                },
+                "27": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "De Retour au Village"
+                },
+                "28": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Direction le Sud-Ouest"
+                },
+                "29": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Soldat"
+                },
+                "30": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Historia"
+                },
+                "31": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Guerriers"
+                },
+                "32": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Percussion, projection, préhension"
+                },
+                "33": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Poursuite"
+                },
+                "34": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Paroles"
+                },
+                "35": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Enfants"
+                },
+                "36": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Assaut"
+                },
+                "37": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Cri"
+                },
+                "38": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Colonne de fumée"
+                },
+                "39": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Douleur"
+                },
+                "40": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Souvenirs"
+                },
+                "41": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Confiance"
+                },
+                "42": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Réponse"
+                },
+                "43": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Crime"
+                },
+                "44": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Souhait"
+                },
+                "45": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le rempart d'Orvud"
+                },
+                "46": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "La reine de ces murs"
+                },
+                "47": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "L'amitié"
+                },
+                "48": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Un simple spectateur"
+                },
+                "49": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "A la veille de la reconquête"
+                },
+                "50": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "La cité où tout a commencé"
+                },
+                "51": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "La lance foudroyante"
+                },
+                "52": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Irruption"
+                },
+                "53": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Match parfait"
+                },
+                "54": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Héroïque"
+                },
+                "55": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Soleil de minuit"
+                },
+                "56": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le sous-sol"
+                },
+                "57": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Ce jour de mon enfance"
+                },
+                "58": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le titan assaillant"
+                },
+                "59": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "De l'autre côté"
+                },
+                "60": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "De l'autre côté de la mer"
+                },
+                "61": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Train de nuit"
+                },
+                "62": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "La porte de l'espoir"
+                },
+                "63": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "De main en main"
+                },
+                "64": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Déclaration de Guerre"
+                },
+                "65": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le titan marteau"
+                },
+                "66": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "L'assaut"
+                },
+                "67": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Balle mortelle"
+                },
+                "68": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Les Mercenaires"
+                },
+                "69": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "De beaux principes"
+                },
+                "70": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Imposture"
+                },
+                "71": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le Guide"
+                },
+                "72": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Les enfants de la forêt"
+                },
+                "73": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Sauvagerie"
+                },
+                "74": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "La seule solution"
+                },
+                "75": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Ciel et terre"
+                },
+                "76": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Condamnation"
+                },
+                "77": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Ruse"
+                },
+                "78": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "L'aîné et le cadet"
+                },
+                "79": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Les souvenirs de l'avenir"
+                },
+                "80": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "De toi, il y a 2 000 ans"
+                },
+                "81": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le dégel"
+                },
+                "82": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Le coucher du soleil"
+                },
+                "83": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Amour-propre"
+                },
+                "84": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "La nuit du final"
+                },
+                "85": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Traîtres"
+                },
+                "86": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "Rétrospection"
+                },
+                "87": {
+                    "episode_release_date": {},
+                    "episode_duration": {},
+                    "episode_name": "L'aube de l'Humanité"
+                }
+            }
+        }
+    }
+}
