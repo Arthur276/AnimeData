@@ -2,3 +2,4 @@
 *.gz
 *.whl
 *.pyc
+watchdata_local.json
