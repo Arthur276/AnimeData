@@ -1,11 +1,11 @@
 {
-    "ANIMEDATA-METADATA": {
+    "WATCHDATA-METADATA": {
         "type": "metadata",
-        "animedata_version": "0.1.4",
+        "watchdata": "0.1.4",
         "lib_subversion" : "0"
     },
     "SNK": {
-        "type": "anime",
+        "type": "series",
         "anime_name": "SNK",
         "seasons_episodes": {
             "1": {
