@@ -24,7 +24,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dependencies = ["tomli"]
 
 [project.urls]
 "Github" = "https://github.com/swarthur/watchdata"
