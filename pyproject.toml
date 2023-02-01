@@ -10,7 +10,7 @@ exclude = [
   ]
 
 [project]
-name = "watchdata"
+name = "showdata"
 version = "0.1"
 authors = [
  {name="swarthur"}
@@ -26,5 +26,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Github" = "https://github.com/swarthur/watchdata"
-"Bug" = "https://github.com/swarthur/watchdata/issues"
+"Github" = "https://github.com/swarthur/showdata"
+"Bug" = "https://github.com/swarthur/showdata/issues"
