@@ -2,4 +2,4 @@
 *.gz
 *.whl
 *.pyc
-watchdata_local.json
+animedata_local.json
