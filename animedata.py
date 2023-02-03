@@ -1,4 +1,4 @@
-"""Module to manage animedata library."""
+"""Module to manage AnimeData library."""
 
 import json
 import urllib.request
@@ -26,7 +26,7 @@ print("AnimeData script version : ", ad_version)
 
 
 def get_ad_lib(branch: str = "main"):
-    """Download and replace local animedata library from Github.
+    """Download and replace local AnimeData library from Github.
 
     Args:
         branch (str, optional): select the target branch.
@@ -41,7 +41,7 @@ def get_ad_lib(branch: str = "main"):
     except urllib.error.HTTPError:
         if branch != "main":
             warnings.warn("Invalid Github URL : Fallback on main branch,\
-database may not be as expected", ResourceWarning)
+database may not act as expected", ResourceWarning)
             get_ad_lib()
         else:
             raise RuntimeError("Unable to get library from Github")
@@ -52,7 +52,7 @@ def get_ad_lib_content(ad_source: bool = False) -> dict:
 
     Args:
         ad_source (bool, optional): Define if the data's
-            source file is animedata's source file,
+            source file is AnimeData's source file,
             otherwise it is a custom file. Defaults to False.
 
     Returns:

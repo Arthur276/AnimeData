@@ -1,7 +1,7 @@
 import animedata as ad
 
 if __name__ == "__main__":
-    ad.get_ad_lib("feat/check-dict")
+    ad.get_ad_lib("main")
     test_json = ad.get_ad_lib_content(True)
     del test_json["ANIMEDATA-METADATA"]
     print(ad.check_dict(test_json))
