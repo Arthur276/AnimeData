@@ -14,13 +14,13 @@ ad_table = {
     f"https://raw.githubusercontent.com/swarthur/animedata/",
     "source_file_name": "./animedata_source.json",
     "local_file_name": "./animedata_local.json",
-    "key_anime_name": "anime_name",
-    "key_seasons_episodes": "seasons_episodes",
-    "key_episode_duration": "episode_duration",
-    "key_episode_release_date": "episode_release_date",
-    "key_episode_name": "episode_name"}
+    "anime_name": "anime_name",
+    "seasons_episodes": "seasons_episodes",
+    "episode_duration": "episode_duration",
+    "episode_release_date": "episode_release_date",
+    "episode_name": "episode_name"}
 
-with open(os.path.join(dir_path, "./pyproject.toml"), mode="rb") as pypr:
+with open(os.path.join(dir_path, ".\\pyproject.toml"), mode="rb") as pypr:
     ad_version = tomllib.load(pypr)["project"]["version"]
 print("AnimeData script version : ", ad_version)
 
