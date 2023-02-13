@@ -15,7 +15,7 @@ ad_table = {
     "source_file_name": "./animedata_source.json",
     "local_file_name": "./animedata_local.json",
     "anime_name": "anime_name",
-    "seasons_episodes": "seasons_episodes",
+    "seasons": "seasons",
     "episode_duration": "episode_duration",
     "episode_release_date": "episode_release_date",
     "episode_name": "episode_name"}

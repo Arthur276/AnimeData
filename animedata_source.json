@@ -7,7 +7,7 @@
     "SNK": {
         "type": "anime",
         "anime_name": "SNK",
-        "seasons_episodes": {
+        "seasons": {
             "1": {
                 "1": {
                     "episode_release_date": {},
