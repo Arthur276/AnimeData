@@ -125,7 +125,7 @@ def check_dict(anime_dict: dict) -> tuple:
         dict_element = anime_dict[element]
         try:
             if dict_element["type"] == "anime":
-                if dict_element.get(ad_table["key_anime_name"]) != element:
+                if dict_element[ad_table["anime_name"]] != element:
                     corrupted_keys.append(element)
             elif dict_element["type"] == "metadata":
                 corrupted_keys.append(element)
