@@ -3,15 +3,16 @@
 import json
 import urllib.request
 import urllib.error
-import tomllib
 import warnings
+import importlib.metadata
 import os.path
 from copy import deepcopy
 
+ad_version = importlib.metadata.version("animedata")
 dir_path = os.path.dirname(__file__)
 ad_table = {
     "repository_url":
-    f"https://raw.githubusercontent.com/swarthur/animedata/",
+    "https://raw.githubusercontent.com/swarthur/animedata/",
     "source_file_name": "./animedata_source.json",
     "local_file_name": "./animedata_local.json",
     "anime_name": "anime_name",
@@ -19,10 +20,6 @@ ad_table = {
     "episode_duration": "episode_duration",
     "episode_release_date": "episode_release_date",
     "episode_name": "episode_name"}
-
-with open(os.path.join(dir_path, ".\\pyproject.toml"), mode="rb") as pypr:
-    ad_version = tomllib.load(pypr)["project"]["version"]
-print("AnimeData script version : ", ad_version)
 
 
 def get_ad_lib(branch: str = "main"):
@@ -103,7 +100,7 @@ corrupted key, ignoring it. Corrupted keys : {check_dict(anime_dict)[2]}")
                 "animedata_version": ad_version},
             **correct_dict
             }
-        json.dump(obj=json_dict, fp=local_json, ensure_ascii=False, indent=4)
+        json.dump(obj=json_dict, fp=local_json, ensure_ascii=False)
 
 
 def check_dict(anime_dict: dict) -> tuple:
