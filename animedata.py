@@ -125,7 +125,7 @@ def check_dict(anime_dict: dict) -> tuple:
                 if dict_element[ad_table["anime_name"]] != element:
                     corrupted_keys.append(element)
             elif dict_element["type"] == "metadata":
-                corrupted_keys.append(element)
+                del correct_dict[element]
             else:
                 corrupted_keys.append(element)
         except KeyError:
