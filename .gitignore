@@ -3,3 +3,4 @@
 *.whl
 *.pyc
 animedata_local.json
+__pycache__
