@@ -14,7 +14,7 @@ include = [
 
 [project]
 name = "animedata"
-version = "0.3.8"
+version = "0.3.9"
 authors = [
  {name="swarthur"}
 ]

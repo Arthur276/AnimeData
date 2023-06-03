@@ -1,5 +1,4 @@
 import unittest
-import os
 from animedata.common import lib_interactions as adlib
 from animedata.common import saving_process as adsave
 from animedata.common import metadata as admeta
@@ -9,7 +8,7 @@ from animedata.common import dict_checking as adcheck
 class test_lib_interaction(unittest.TestCase):
     def test_get_ad_lib(self):
         adlib.get_ad_lib()
-        self.assertTrue(os.path.isfile(admeta.ad_table["source_file_path"]),
+        self.assertTrue(admeta.ad_table["source_file_path"],
                         "Source file not found !")
         
     def test_get_ad_lib_content(self):

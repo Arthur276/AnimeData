@@ -1,9 +1,7 @@
 import urllib.request
 import warnings
 import json
-import pkgutil
-import os.path
-from animedata.common.metadata import ad_table, dir_path
+from animedata.common.metadata import ad_table
 
 
 def get_ad_lib(branch: str = "main"):
@@ -18,7 +16,7 @@ def get_ad_lib(branch: str = "main"):
             ad_table["repository_url"] +
             branch + "/" +
             ad_table["source_file_name"],
-            os.path.join(dir_path, ad_table["source_file_path"]))
+            ad_table["source_file_path"])
     except urllib.error.HTTPError:
         if branch != "main":
             warnings.warn("Invalid Github URL : Fallback on main branch,\
@@ -43,15 +41,15 @@ def get_ad_lib_content(ad_source: bool = False) -> dict:
         target_file = ad_table["source_file_path"]
     else:
         target_file = ad_table["local_file_path"]
-        with open(os.path.join(dir_path, ad_table[target_file]), encoding="utf-8") as ad_json:
-            ad_dict = json.load(ad_json)
-        return ad_dict
+    with open(target_file, encoding="utf-8") as ad_json:
+        ad_dict = json.load(ad_json)
+    return ad_dict
 
 
-def show_lib_content():
+def show_lib_content(ad_source):
     """Show the version of the library and the animes available."""
     # STATUS : OK
-    ad_dict = get_ad_lib_content()
+    ad_dict = get_ad_lib_content(ad_source)
     print("AnimeData library version :",
           ad_dict["ANIMEDATA-METADATA"]["animedata_version"],
           "#" + ad_dict["ANIMEDATA-METADATA"]["lib_subversion"])
