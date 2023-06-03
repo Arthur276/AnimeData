@@ -1,7 +1,8 @@
 import urllib.request
 import warnings
 import json
-import importlib.resources
+import pkgutil
+import os.path
 from animedata.common.metadata import ad_table, dir_path
 
 
@@ -17,7 +18,7 @@ def get_ad_lib(branch: str = "main"):
             ad_table["repository_url"] +
             branch + "/" +
             ad_table["source_file_name"],
-            ad_table["source_file_path"])
+            os.path.join(dir_path, ad_table["source_file_path"]))
     except urllib.error.HTTPError:
         if branch != "main":
             warnings.warn("Invalid Github URL : Fallback on main branch,\
@@ -42,9 +43,8 @@ def get_ad_lib_content(ad_source: bool = False) -> dict:
         target_file = ad_table["source_file_path"]
     else:
         target_file = ad_table["local_file_path"]
-        with open(target_file, encoding="utf-8") as ad_json:
+        with open(os.path.join(dir_path, ad_table[target_file]), encoding="utf-8") as ad_json:
             ad_dict = json.load(ad_json)
-            print(ad_dict)
         return ad_dict
 
 
