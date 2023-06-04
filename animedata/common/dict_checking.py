@@ -1,6 +1,7 @@
 from copy import deepcopy
 from animedata.common.metadata import ad_table
 
+
 def check_dict(anime_dict: dict) -> tuple:
     """Check if the dictionnary is compatible with animedata's environment.
 
