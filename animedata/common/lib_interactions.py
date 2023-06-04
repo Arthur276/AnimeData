@@ -48,7 +48,6 @@ def get_ad_lib_content(ad_source: bool = False) -> dict:
 
 def show_lib_content(ad_source):
     """Show the version of the library and the animes available."""
-    # STATUS : OK
     ad_dict = get_ad_lib_content(ad_source)
     print("AnimeData library version :",
           ad_dict["ANIMEDATA-METADATA"]["animedata_version"],

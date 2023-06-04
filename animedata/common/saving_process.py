@@ -1,7 +1,7 @@
-from animedata.common.metadata import ad_table, ad_version
-from animedata.common.dict_checking import check_dict
 import json
 import warnings
+from animedata.common.metadata import ad_table, ad_version
+from animedata.common.dict_checking import check_dict
 
 
 def save_json(anime_dict: dict):
@@ -11,7 +11,6 @@ def save_json(anime_dict: dict):
         anime_dict (dict): Dictionnary containing anime's data.
             Must be formatted with multi_anime_dict.
     """
-    # STATUS : OK
     with open(ad_table["local_file_path"],
               "w",
               encoding="utf-8") as local_json:
