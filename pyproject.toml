@@ -14,11 +14,11 @@ include = [
 
 [project]
 name = "animedata"
-version = "0.3.9"
+version = "1.0.0"
 authors = [
  {name="swarthur"}
 ]
-description = "Open-source library containing package about animes/series and including a built-in utility."
+description = "Python project to get and store anime data."
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
