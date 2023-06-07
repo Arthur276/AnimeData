@@ -14,7 +14,7 @@ def get_ad_lib(branch: str = "main"):
     try:
         urllib.request.urlretrieve(
             ad_table["repository_url"] +
-            branch + "/" +
+            branch + "/" + "animedata/resources/" +
             ad_table["source_file_name"],
             ad_table["source_file_path"])
     except urllib.error.HTTPError:
@@ -55,4 +55,4 @@ def show_lib_content(ad_source):
     print("Animes available :")
     for element in ad_dict.values():
         if element["type"] == "anime":
-            print(element[ad_table["key_anime_name"]])
+            print(element[ad_table["anime_name"]])
