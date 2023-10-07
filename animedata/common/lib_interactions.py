@@ -14,7 +14,7 @@ def get_ad_lib(branch: str = "main"):
     try:
         urllib.request.urlretrieve(
             ad_table["repository_url"] +
-            branch + "/" +
+            branch + "/" + "animedata/resources/" +
             ad_table["source_file_name"],
             ad_table["source_file_path"])
     except urllib.error.HTTPError:
