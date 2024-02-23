@@ -4,3 +4,4 @@
 *.pyc
 animedata_local.json
 __pycache__
+/.vscode/
